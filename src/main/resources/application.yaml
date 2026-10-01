@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: EjemploSpring
+
+  datasource:
+    # Configuración para H2 en memoria
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      # Habilita una consola web para ver tus tablas (opcional pero muy útil)
+      enabled: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      # 'update' crea y actualiza las tablas según tus clases Java
+      ddl-auto: update
+    # Muestra en la consola el SQL que Spring genera automáticamente
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
